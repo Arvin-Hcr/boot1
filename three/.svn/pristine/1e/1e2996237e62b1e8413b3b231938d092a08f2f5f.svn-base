@@ -1,0 +1,21 @@
+package com.whqfl.dao;
+
+
+
+import com.whqfl.entity.RechargeRule;
+
+import java.util.List;
+
+/**
+ * @author WCX
+ * @data 2019/12/24 21:45
+ * @describe
+ */
+public interface RechargeRuleDao {
+    List<RechargeRule> getRechargeRuleList(Integer pageNumber, Integer pageSize, String searchStartTime, String searchEndTime, String searchName, Integer searchStatus);
+    int getRechargeRuleCount(String searchStartTime, String searchEndTime, String searchName, Integer searchStatus);
+    int updateRechargeRuleById(RechargeRule rechargeRule);
+    int insertRechargeRule(RechargeRule rechargeRule);
+    int delRechargeRule(Integer id);
+}
+

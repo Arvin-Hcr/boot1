@@ -1,0 +1,115 @@
+
+
+/**
+ * @author WCX
+ * @data 2019/12/25 9:36
+ * @describe
+ */
+package com.whqfl.entity;
+
+
+import java.io.Serializable;
+
+/**
+ * @author
+ * @date 2019/11/26
+ * 充值规则
+ **/
+public class RechargeRule implements Serializable {
+    /**
+     * id
+     */
+    private Integer id;
+
+    /**
+     * 充值规则名字
+     */
+    private String name;
+
+    /**
+     * 充值系数
+     */
+    private Double coefficient;
+
+    /**
+     * 开始时间
+     */
+    private String createdTime;
+
+    /**
+     * 结束时间
+     */
+    private String endTime;
+    private int status;
+    private String startMoney;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Double getCoefficient() {
+        return coefficient;
+    }
+
+    public void setCoefficient(Double coefficient) {
+        this.coefficient = coefficient;
+    }
+
+    public String getCreatedTime() {
+        return createdTime;
+    }
+
+    public void setCreatedTime(String createdTime) {
+        this.createdTime = createdTime;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public String getStartMoney() {
+        return startMoney;
+    }
+
+    public void setStartMoney(String startMoney) {
+        this.startMoney = startMoney;
+    }
+
+    @Override
+    public String toString() {
+        return "RechargeRule{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", coefficient=" + coefficient +
+                ", createdTime='" + createdTime + '\'' +
+                ", endTime='" + endTime + '\'' +
+                ", status=" + status +
+                ", startMoney='" + startMoney + '\'' +
+                '}';
+    }
+}
+

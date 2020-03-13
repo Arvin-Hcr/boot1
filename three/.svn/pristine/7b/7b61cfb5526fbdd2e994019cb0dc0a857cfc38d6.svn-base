@@ -1,0 +1,359 @@
+/**
+ * @author wcx
+ * @date 2019/12/24
+ * 初始化
+ **/
+$(function () {
+    rechargeManager.initList();
+})
+
+/**
+ * @author wcx
+ * @date 2019/12/24
+ * 定义函数
+ **/
+var rechargeManager = {};
+
+/**
+ * @author wcx
+ * @date 2019/12/24
+ * 加载列表
+ **/
+rechargeManager.initList = function () {
+
+    $("#rechargeRuleList").bootstrapTable({
+        url: "/GetOderListServlet", //请求路径
+        method: 'post', //请求方式(*)
+        contentType: 'application/x-www-form-urlencoded', //使用from表单方式提交(*)
+        toolbar: '#toolbar', //工具按钮的容器
+        striped: true, //是否启用隔行变色
+        cache: false, //使用是否缓存 默认为true,所以一般情况下需要设置一下为false (*)
+        pagination: true, //是否显示分页(*)
+        sortable: false, //使用启用排序
+        sortOrder: 'desc', //排序方式
+        queryParams: rechargeManager.queryParams, //传递参数(*)
+        queryParamsType: '',
+        sidePagination: 'server', // 分页方式有两种 1.client 客户端分页  2.server分页
+        pageNumber: 1, //初始化页数为第一页
+        pageSize: 5, //默认每页加载行数
+        pageList: [10, 25, 50, 100], //每页可选择记录数
+        strictSearch: true,
+        showColumns: false, // 是否显示所有的列
+        showRefresh: false, // 是否显示刷新按钮
+        minimumCountColumns: 2, // 最少允许的列数
+        clickToSelect: true, // 是否启用点击选中行
+        uniqueId: "id", // 每一行的唯一标识，一般为主键列
+        showToggle: false, // 是否显示详细视图和列表视图的切换按钮
+        cardView: false, // 是否显示详细视图
+        detailView: false, // 是否显示父子表
+        smartDisplay: false,
+        onClickRow: function (e, row, element) {
+            $(".success").removeClass("success");
+            $(row).addClass("success");
+        },
+        responseHandler: function (result) {
+            if (result != null) {
+                return {
+                    'total': result.data.count, //总条数
+                    'rows': result.data.list //所有的数据
+                };
+            }
+            return {
+                'total': 0, //总条数
+                'rows': [] //所有的数据
+            }
+        },
+        //列表显示
+        columns: [{
+            field: 'id',
+            title: "编号",
+            visible: false
+        }, {
+            field: 'orderId',
+            title: "订单编号"
+        }, {
+            field: 'cardId',
+            title: "卡ID"
+        }, {
+            field: 'cardType',
+            title: "卡类型"
+        }, {
+            field: 'price',
+            title: "价格"
+        }, {
+            field: 'pay',
+            title: "实付"
+        }, {
+            field: 'credit',
+            title: "积分"
+        }, {
+            field: 'status',
+            title: "状态",
+            formatter: function (value) {
+                if (value == 1) {
+                    return '<span class="label label-info">启用</span>';
+                } else {
+                    return '<span class="label label-danger">禁用</span>';
+                }
+            }
+        }, {
+            field: 'momo',
+            title: "备注"
+        }, {
+            field: 'createdTime',
+            title: "创建时间"
+        }, {
+        //     field: 'endTime',
+        //     title: "结束时间"
+        // }, {
+            field: 'operation',
+            events: buttonOperateEvent,
+            title: '操作',
+            formatter: function (value, row, index) {
+                return rechargeManager.buttonOption(value, row, index);
+            }
+        }]
+    });
+}
+
+/**
+ * @author wcx
+ * @date 2019/12/24
+ * 添加事件  给 updateRule/delRule  添加了 点击事件
+ **/
+window.buttonOperateEvent = {
+    'click .updateRule': function (e, value, row, index) {
+        //row 这一行的数据
+        rechargeManager.update(row);
+    },
+    'click .delRule': function (e, value, row, index) {
+        rechargeManager.del(row);
+    }
+}
+
+/**
+ * @author wcx
+ * @date 2019/12/24
+ * 给操作添加 对象 button
+ **/
+rechargeManager.buttonOption = function (value, row, index) {
+    var returnButton = [];
+    returnButton.push('<button class="btn btn-info updateRule">备注</button>');
+    if (row.status == 1) {
+        returnButton.push('<button class="btn btn-danger delRule">禁用</button>');
+    } else {
+        returnButton.push('<button class="btn btn-success delRule">启用</button>');
+    }
+    return returnButton.join('');
+}
+
+/**
+ * @author wcx
+ * @date 2019/12/24
+ * 传递参数
+ **/
+rechargeManager.queryParams = function (params) {
+    return {
+        "pageNumber": params.pageNumber,
+        "pageSize": params.pageSize,
+        "searchOrderId": $("#searchOrderId").val()
+
+        // "searchName": $("#search").val(),
+
+    }
+}
+
+/**
+ * @author wcx
+ * @date 2019/12/24
+ * 搜索按钮
+ **/
+rechargeManager.search = function () {
+    //重新加载 bootstrap table
+    $("#rechargeRuleList").bootstrapTable('refresh', {pageNumber: 1})
+}
+
+/**
+ * @author wcx
+ * @date 2019/12/24
+ * 订单表修改
+ **/
+rechargeManager.update = function (row) {
+
+    $("#myModal").modal('show');
+    $("#ruleId").val(row.id);
+    $("#ruleOrderId").val(row.orderId);
+    $("#ruleCardId").val(row.cardId);
+    $("#ruleCardType").val(row.cardType);
+    $("#rulePrice").val(row.price);
+    $("#rulePay").val(row.pay);
+    $("#ruleCredit").val(row.credit);
+    $("#ruleStatus").val(row.status);
+    $("#ruleMomo").val(row.momo);
+    $("#ruleCreatedTime").val(row.createdTime);
+};
+
+/**
+ * @author wcx
+ * @date 2019/12/24
+ * 订单删除
+ **/
+rechargeManager.del = function (row) {
+    Modal.confirm({
+        msg: "确认当前操作"
+    }).on(function (e) {
+        if (e) {
+            $.ajax({
+                url: "/DelOderServlet",
+                type: "post",
+                data: {
+                    "ruleId": row.id
+                },
+                dataType: 'json',
+                success: function (result) {
+                    if (result.data >= 1) {
+                        toastr['success']("删除成功");
+                        $("#rechargeRuleList").bootstrapTable('refresh');
+                    } else {
+                        toastr['success']("删除失败");
+                    }
+                }
+            })
+        }
+    })
+}
+
+/**
+ * @author wcx
+ * @date 2019/12/24
+ * 新增
+ **/
+rechargeManager.add = function () {
+
+    var date = new Date();
+    var dd = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate()+"-"+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();
+    $("#ruleCreatedTime").val(dd);
+    $("#myModal").modal('show');
+}
+
+/**
+ * @author wcx
+ * @date 2019/12/25
+ * 关闭模态框  触发操作
+ * 1.将验证重置
+ * 2.重置表单内容
+ **/
+$("#myModal").on('hide.bs.modal', function () {
+    //移除上次的校验配置
+    $("#ruleForm").data('bootstrapValidator').resetForm();
+    $("#ruleForm")[0].reset();
+})
+
+/**
+ * @author wcx
+ * @date 2019/12/25
+ * 确认按钮
+ **/
+rechargeManager.operate = function () {
+    var bootstrapValidator = $("#ruleForm").data('bootstrapValidator');
+    bootstrapValidator.validate();
+    if (bootstrapValidator.isValid()) {
+        $.ajax({
+            url: "/UpdateOderByIdServlet",
+            type: "post",
+            data: {
+                "ruleId": $("#ruleId").val(),
+                "ruleOrderId": $("#ruleOrderId").val(),
+                "ruleCardId": $("#ruleCardId").val(),
+                "ruleCardType": $("#ruleCardType").val(),
+                "rulePrice": $("#rulePrice").val(),
+                "rulePay": $("#rulePay").val(),
+                "ruleCredit": $("#ruleCredit").val(),
+                "ruleStatus": $("#ruleStatus").val(),
+                "ruleMomo": $("#ruleMomo").val(),
+                "ruleCreatedTime": $("#ruleCreatedTime").val()
+            },
+            dataType: 'json',
+            success: function (result) {
+                if (result.data >= 1) {
+                    toastr['success']("修改成功");
+                    $("#rechargeRuleList").bootstrapTable('refresh');
+                    $("#myModal").modal('hide');
+                } else {
+                    toastr['success']("修改失败");
+                }
+            }
+        })
+    }
+}
+
+/*
+ * @author wcx
+ * @date 2019/11/19
+ * 验证
+**/
+$("#ruleForm").bootstrapValidator({
+    feedbackIcons: {
+        valid: 'glyphicon glyphicon-ok',
+        invalid: 'glyphicon glyphicon-remove',
+        validating: 'glyphicon glyphicon-refresh'
+    },
+    fields: {
+        ruleOrderId: {
+            validators: {
+                notEmpty: {
+                    message: "订单编号不能为空"
+                }
+            }
+        },
+        ruleCardId: {
+            validators: {
+                notEmpty: {
+                    message: "卡ID不能为空"
+                }
+            }
+        },
+        ruleCardType: {
+            validators: {
+                notEmpty: {
+                    message: "卡类型不能为空"
+                }
+            }
+        },
+        rulePrice: {
+            validators: {
+                notEmpty: {
+                    message: "价格不能为空"
+                }
+            }
+        },
+        rulePay: {
+            validators: {
+                notEmpty: {
+                    message: "实付金额不能为空"
+                }
+            }
+        },
+        ruleCredit: {
+            validators: {
+                notEmpty: {
+                    message: "积分不能为空"
+                }
+            }
+        },
+        ruleStatus: {
+            validators: {
+                notEmpty: {
+                    message: "状态不能为空"
+                }
+            }
+        },
+        ruleCreatedTime: {
+            validators: {
+                notEmpty: {
+                    message: "创建时间不能为空"
+                }
+            }
+        }
+    }
+});

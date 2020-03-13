@@ -1,0 +1,18 @@
+package com.whqfl.dao;
+
+import com.whqfl.entity.ConsumOrder;
+
+import java.util.List;
+
+/**
+ * @author WCX
+ * @data 2019/12/26 9:39
+ * @describe
+ */
+public interface OderDao {
+    List<ConsumOrder> getOderList(Integer pagerNumber,Integer pagerSize,String searchOrderId,String searchCardType,Integer status);
+    int getOderCount(String searchOrderId,String searchCardType,Integer status);
+    int updateOderById(ConsumOrder consumOrder);
+    int insertOderById(ConsumOrder consumOrder);
+    int delOderById(Integer id);
+}

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>充值规则</title>
+    <link type="text/css" rel="stylesheet" href="../common/bootstrap/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="../common/bootstrap/table/bootstrap-table.min.css">
+    <link type="text/css" rel="stylesheet" href="../common/validate/bootstrapValidator.css">
+    <link type="text/css" rel="stylesheet" href="../common/toastr/toastr.min.css">
+    <link type="text/css" rel="stylesheet" href="../common/css/common.css">
+</head>
+<body>
+<div class="form-groupd">
+    <label for="searchOrderId" class="label-control">订单编号</label>
+    <input type="text" class="form-control" id="searchOrderId" placeholder="订单编号">
+</div>
+<div class="form-groupd">
+    <label for="searchCardType" class="label-control">卡类型</label>
+    <input type="text" class="form-control" id="searchCardType" placeholder="卡类型">
+</div>
+<div class="form-groupd">
+    <label for="searchStatus" class="label-control">状态</label>
+    <select class="form-control" id="searchStatus">
+        <option value="-1">全部</option>
+        <option value="0">禁用</option>
+        <option value="1">启用</option>
+    </select>
+</div>
+
+<button type="button" class="btn btn-primary" onclick="rechargeManager.search()">搜索</button>
+<button type="button" class="btn btn-primary" onclick="rechargeManager.add()">新增规则</button>
+<div class="tab-pane">
+    <table class="table table-bordered table-striped" id="rechargeRuleList">
+        <thead style="background-color: #BEDDFA">
+
+        </thead>
+    </table>
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    修改规则信息
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form id="ruleForm">
+                    <div class="row">
+                        <div class="col-md-4" hidden>
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">编号</span>
+                                <input class="form-control" placeholder="编号" name="ruleId" id="ruleId">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">订单编号</span>
+                                <input class="form-control" placeholder="订单编号" name="ruleOrderId" id="ruleOrderId">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">卡ID</span>
+                                <input class="form-control" placeholder="卡ID" name="ruleCardId" id="ruleCardId">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">卡类型</span>
+                                <input class="form-control" placeholder="卡类型" name="ruleCardType" id="ruleCardType">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">价格</span>
+                                <input class="form-control" placeholder="价格" name="rulePrice" id="rulePrice">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">实付</span>
+                                <input class="form-control" placeholder="实付" name="rulePay" id="rulePay">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">积分</span>
+                                <input class="form-control" placeholder="积分" name="ruleCredit" id="ruleCredit">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">状态</span>
+                                <select class="form-control" id="ruleStatus">
+                                    <option value="1">启用</option>
+                                    <option value="0">禁用</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">备注</span>
+                                <input class="form-control" placeholder="备注" name="ruleMomo" id="ruleMomo">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">创建时间</span>
+                                <input class="form-control" placeholder="创建时间" readonly="readonly" name="ruleCreatedTime" id="ruleCreatedTime">
+                            </div>
+                        </div>
+                        <!--<div class="col-md-6">-->
+                            <!--<div class="form-group input-group">-->
+                                <!--<span class="input-group-addon">结束时间</span>-->
+                                <!--<input class="form-control" placeholder="结束时间" name="ruleEndDate" id="ruleEndDate">-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+                <button type="button" class="btn btn-primary" onclick="rechargeManager.operate();">
+                    确认
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<!-- system confirm modal start -->
+<div id="ycf-alert" class="modal">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span
+                        class="sr-only">Close</span></button>
+                <h5 class="modal-title"><i class="fa fa-exclamation-circle"></i> [Title]</h5>
+            </div>
+            <div class="modal-body">
+                <p>[Message]</p>
+            </div>
+            <div class="modal-footer">
+                <center>
+                    <button type="button" class="btn btn-primary ok" data-dismiss="modal">[BtnOk]</button>
+                    <button type="button" class="btn btn-default cancel" data-dismiss="modal">[BtnCancel]</button>
+                </center>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../common/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../common/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../common/bootstrap/table/bootstrap-table.min.js"></script>
+<script type="text/javascript" src="../common/bootstrap/table/bootstrap-table-zh-CN.min.js"></script>
+<script type="text/javascript" src="../common/validate/bootstrapValidator.min.js"></script>
+<script type="text/javascript" src="../common/confirm/bootstrap.confirm.js"></script>
+<script type="text/javascript" src="../common/toastr/toastr.min.js"></script>
+<script type="text/javascript" src="../common/laydate/laydate.js"></script>
+<script type="text/javascript" src="oderList.js"></script>
+<script type="text/javascript">
+    // laydate.render({
+    //     elem: '#searchStartTime',
+    //     type: 'date',
+    //     done:function () {
+    //         var a = $("#searchStartTime").val();
+    //         var b = $("#searchEndTime").val();
+    //         if (new Date(a) > new Date(b)){
+    //             toastr['error']("开始时间必须小于结束时间");
+    //             $("#searchStartTime").val("");
+    //         }
+    //     }
+    // })
+    // laydate.render({
+    //     elem: '#searchEndTime',
+    //     type: 'date',
+    //     done:function () {
+    //         var a = $("#searchStartTime").val();
+    //         var b = $("#searchEndTime").val();
+    //         if (new Date(a) > new Date(b)){
+    //             toastr['error']("开始时间必须小于结束时间");
+    //             $("#searchEndTime").val("");
+    //         }
+    //     }
+    // })
+    laydate.render({
+        elem: '#ruleCreatedTime',
+        type: 'date'
+    })
+</script>
+</html>

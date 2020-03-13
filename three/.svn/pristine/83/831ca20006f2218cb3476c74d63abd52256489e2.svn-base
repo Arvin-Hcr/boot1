@@ -1,0 +1,68 @@
+package com.whqfl.dao;
+
+import com.whqfl.entity.CateGory;
+import com.whqfl.entity.Goods;
+import com.whqfl.entity.Unit;
+
+import java.util.List;
+
+public interface GoodsDao {
+    /**
+        @autor lxx
+        @date   2019/12/25
+    */
+    /**分页查询所有的商品信息
+        @autor lxx
+        @date   2019/12/25
+    */
+    List<Goods> getAllGoodsInfo(Integer pageNumber, Integer pageSize, String searchGoods, String searchName);
+    /**
+     * 查询商品的总条数
+        @autor lxx
+        @date   2019/12/25
+    */
+    int getAllGoodsInfoCount(String searchGoods,String searchName);
+    /**
+     * 下架商品
+        @autor lxx
+        @date   2019/12/26
+    */
+    int delGoods(Integer goodsId ,Integer status);
+
+    List<CateGory> getAllCategory();
+
+    /**
+     * 增加商品
+     @autor lxx
+     @date   2019/12/28
+     */
+    int addGoods(Goods goods);
+
+    /**
+     * 获取最后一位商品号
+     */
+    String getLastGoodsId();
+
+    /**修改商品信息
+        @autor lxx
+        @date   2019/12/26
+    */
+    int updateGoodsByGoodsId(Goods goods);
+/**
+ *商品类别
+    @autor lxx
+    @date   2019/12/26
+*/
+List<CateGory> GetGoodsCategory();
+
+
+
+    /**获取单位所有的类别
+        @autor lxx
+        @date   2019/12/27
+    */
+    List<Unit> getAllUnit();
+
+
+
+}

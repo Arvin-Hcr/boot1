@@ -1,0 +1,43 @@
+package com.whqfl.service;
+
+import com.whqfl.entity.CateGory;
+import com.whqfl.util.BusinessException;
+
+import java.util.List;
+import java.util.Map;
+
+public interface CategoryService {
+    /**获取所有商品类别
+     @autor lxx
+     @date   2019/12/26
+     */
+
+    List<CateGory> getAllCategory();
+
+    Map<String,Object> getAllCategoryInfo(Integer pageNumber, Integer pageSize, String searchId, String searchName) throws BusinessException;
+
+
+
+    /**
+     @autor lxx
+     @date   2019/12/29
+     */
+
+
+
+    int updateOrAddCategory(Integer id ,String name,String momo,Integer status)throws Exception;
+
+    /**
+     * 删除商品分类
+     @autor lxx
+     @date   2019/12/28
+     */
+    int delCategory(Integer Id);
+    /**
+     @autor lxx
+     @date   2019/12/26
+     */
+    int getAllCategoryCount(String searchId, String searchName);
+
+
+}

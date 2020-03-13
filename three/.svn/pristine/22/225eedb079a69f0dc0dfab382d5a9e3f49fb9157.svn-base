@@ -1,0 +1,14 @@
+package com.whqfl.service;
+
+import java.util.Map;
+
+/**
+ * @author WCX
+ * @data 2019/12/26 19:05
+ * @describe
+ */
+public interface OderService {
+    Map<String,Object> getOderService(Integer pagerNumber,Integer pagerSize,String searchOrderId,String searchCardType,Integer status)throws Exception;
+    int updateOderByIdService(String ruleId,String ruleOrderId,String ruleCardId,String ruleCardType,String rulePrice,String rulePay,String ruleCredit,String ruleStatus,String ruleMOmo,String ruleCrreatedTime)throws Exception;
+    int delOderService(Integer id);
+}

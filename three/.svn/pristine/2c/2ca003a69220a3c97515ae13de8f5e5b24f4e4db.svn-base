@@ -1,0 +1,54 @@
+package com.whqfl.service.impl;
+
+import com.whqfl.dao.StatisticsDao;
+import com.whqfl.dao.impl.StatisticsDaoImp;
+import com.whqfl.service.StatisticService;
+import com.whqfl.util.DateUtils;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * @author 彭于晏
+ * @data 2019/12/27 22:55
+ * @describe
+ */
+public class StatisticServiceImp implements StatisticService {
+    private StatisticsDao statisticsDao=new StatisticsDaoImp();
+    @Override
+    public Map<String,Object> getNearOneYearUser() {
+        int[] ints = DateUtils.getMonthByNearYear();
+        int[] datas = new int[12];
+        String[] strings = new String[12];
+        List<Map<String, Object>> mapList = statisticsDao.getNearOneYearUser();
+        for (int i = 0; i < ints.length; i++) {
+            for (int j = 0; j < mapList.size(); j++) {
+                if (ints[i] == Integer.parseInt(mapList.get(j).get("mouth") + "")) {
+                    datas[i] = Integer.parseInt(mapList.get(j).get("len")+"");
+                }
+            }
+        }
+        for (int i = 0; i < ints.length; i++) {
+            switch (ints[i]){
+                case 1:strings[i] = "一月份";break;
+                case 2:strings[i] = "二月份";break;
+                case 3:strings[i] = "三月份";break;
+                case 4:strings[i] = "四月份";break;
+                case 5:strings[i] = "五月份";break;
+                case 6:strings[i] = "六月份";break;
+                case 7:strings[i] = "七月份";break;
+                case 8:strings[i] = "八月份";break;
+                case 9:strings[i] = "九月份";break;
+                case 10:strings[i] = "十月份";break;
+                case 11:strings[i] = "十一月份";break;
+                case 12:strings[i] = "十二月份";break;
+                default:strings[i] = "";
+            }
+        }
+        Map<String,Object> map = new HashMap<>();
+        map.put("m",strings);
+        map.put("d",datas);
+        return  map;
+    }
+}

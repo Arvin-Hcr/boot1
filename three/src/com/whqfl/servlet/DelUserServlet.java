@@ -1,0 +1,44 @@
+package com.whqfl.servlet;
+
+import com.google.gson.Gson;
+import com.whqfl.entity.ResponseDto;
+import com.whqfl.service.UserService;
+import com.whqfl.service.impl.UserServiceImpl;
+import com.whqfl.util.IntegerUtils;
+import org.apache.log4j.Logger;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+
+@WebServlet(name = "DelUserServlet",urlPatterns = "/DelUserServlet")
+public class DelUserServlet extends HttpServlet {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=utf-8");
+        Integer userID= IntegerUtils.ToInteger(request.getParameter("userId"));
+        Logger logger=Logger.getLogger("UpdateUserServlet");
+        Gson gson = new Gson();
+        ResponseDto responseDto=new ResponseDto();
+        UserService userService=new UserServiceImpl();
+        try {
+            responseDto.setStatus(ResponseDto.SUCCESS_CODE);
+            responseDto.setMessage("删除成功");
+            responseDto.setData(userService.delUser(userID));
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            responseDto.setStatus(ResponseDto.FAILURE_CODE);
+            responseDto.setMessage("删除失败");
+        }
+        response.getWriter().print(gson.toJson(responseDto));
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doPost(request, response);
+    }
+}

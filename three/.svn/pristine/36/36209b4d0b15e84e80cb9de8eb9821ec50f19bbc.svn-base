@@ -1,0 +1,82 @@
+package com.whqfl.dao.impl;
+
+import com.whqfl.dao.CardDao;
+import com.whqfl.entity.Card;
+import com.whqfl.entity.CardType;
+import com.whqfl.entity.User;
+import com.whqfl.util.BaseDao;
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.List;
+
+/**
+ * @authoor 秦林海
+ * @date 2019/12/26
+ */
+public class CardDaoImpl implements CardDao {
+    private BaseDao baseDao=new BaseDao();
+    @Override
+    public List<CardType> getCardType() {
+        String sql="select * from cardtype where status=1";
+        List<CardType> cardTypeList= baseDao.queryList(sql,null,CardType.class);
+        if(cardTypeList!=null && cardTypeList.size()>0){
+            return  cardTypeList;
+        }
+
+        return null;
+    }
+
+    @Override
+    public List<Card> getAllCardList(Integer pageNumber, Integer pageSize, String searchName, String searchId) {
+        String sql="select c.*,u.userName,ct.`name` levelName from user u, card c,cardtype ct where u.cardId=c.cardId and ct.id=c.levelId ";
+        if(!StringUtils.isBlank(searchId)){
+            sql+="where c.userId= '"+searchId+"' ";
+        }
+        if(!StringUtils.isBlank(searchName)){
+            sql+=" and u.userName like '%"+searchName+"%'";
+        }
+        sql+="limit ?,?";
+        Object [] params={(pageNumber-1)*pageSize,pageSize};
+        List<Card> cardList=baseDao.queryList(sql,params,Card.class);
+        if(cardList!=null && cardList.size()>0){
+            return cardList;
+        }
+
+        return null;
+    }
+
+    @Override
+    public int getAllCardCount(String searchId, String searchName) {
+        String sql="select c.*,u.userName,ct.`name` levelName from user u, card c,cardtype ct where u.cardId=c.cardId and ct.id=c.levelId ";
+        if(!StringUtils.isBlank(searchId)){
+            sql+="where c.userId= '"+searchId+"' ";
+        }
+        if(!StringUtils.isBlank(searchName)){
+            sql+=" and u.userName like '%"+searchName+"%'";
+        }
+        List<Card> cardList=baseDao.queryList(sql,null,Card.class);
+        int count=cardList.size();
+        return  count;
+    }
+
+    @Override
+    public int delCardStatus(Card card) {
+        String sql="select status from card where cardId=?";
+        Object [] params={card.getCardId()};
+        List<Card> list=baseDao.queryList(sql,params,Card.class);
+        int status=0;
+        if(list!=null && list.size()>0){
+            status=list.get(0).getStatus();
+        }
+        sql="update card set status=? where cardId=?";
+        if(status==1){
+            status=0;
+        }else if(status==0){
+            status=1;
+        }
+        Object [] params1={status,card.getCardId()};
+        return  baseDao.executeUpdate(sql,params1);
+    }
+
+
+}

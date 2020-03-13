@@ -1,0 +1,23 @@
+package com.whqfl.dao;
+
+import com.whqfl.entity.Goods;
+
+import java.util.List;
+
+public interface GoodsDao {
+    /**
+        @autor lxx
+        @date   2019/12/25
+    */
+    /**分页查询所有的商品信息
+        @autor lxx
+        @date   2019/12/25
+    */
+    List<Goods> getAllGoodsInfo(Integer pageNumber, Integer pageSize, String searchGoods, String searchName);
+    /**
+     * 查询商品的总条数
+        @autor lxx
+        @date   2019/12/25
+    */
+    int getAllGoodsInfoCount(String searchGoods,String searchName);
+}

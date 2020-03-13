@@ -1,0 +1,106 @@
+package com.whqfl.dao.impl;
+
+import com.whqfl.dao.StaffMangerDao;
+import com.whqfl.entity.Staff;
+import com.whqfl.util.BaseDao;
+import com.whqfl.util.IntegerUtils;
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.List;
+import java.util.Map;
+
+
+/**
+ * @author 彭于晏
+ * @data 2019/12/25 8:47
+ * @describe
+ */
+public class StaffMangerDaoImp implements StaffMangerDao {
+    private BaseDao<Staff>baseDao=new BaseDao<>();
+    @Override
+    public List<Staff> showStaff(Integer pageNumber, Integer pageSize, String status, String staffName,String createdTime) {
+        String sql="select *  from staff where 1=1 ";
+
+        if(!StringUtils.isBlank(status)){
+            Integer integerStatus = IntegerUtils.ToInteger(status);
+            if(integerStatus!=-1){
+            sql +=" and status='"+status+"' ";
+            }
+        }
+        if(!StringUtils.isBlank(staffName)){
+            sql +=" and staffName like '%"+staffName+"%' ";
+        }
+
+        if(!StringUtils.isBlank(createdTime)){
+            sql +=" and createdTime='"+createdTime+"' ";
+        }
+        sql +="limit ?,?";
+        Object[]objects={(pageNumber-1)*pageSize,pageSize};
+        List<Staff> staff = baseDao.queryList(sql, objects, Staff.class);
+        return staff;
+    }
+
+
+    @Override
+    public Integer CountStaff(String status, String staffName, String createdTime) {
+        String sql="select count(*) len from staff where 1=1 ";
+        if(!StringUtils.isBlank(status)){
+            Integer integerStatus = IntegerUtils.ToInteger(status);
+            if(integerStatus!=-1){
+                sql +=" and status='"+status+"' ";
+            }
+        }
+        if(!StringUtils.isBlank(staffName)){
+            sql +=" and staffName like '%"+staffName+"%' ";
+        }
+
+        if(!StringUtils.isBlank(createdTime)){
+            sql +=" and createdTime='"+createdTime+"' ";
+        }
+        List<Map<String,Object>> staff = baseDao.executeQuery(sql,null);
+//        System.out.println(staff.get(0).get("len"));
+        if(!staff.isEmpty()){
+            Integer integer = IntegerUtils.ToInteger((String) staff.get(0).get("len"));
+            return integer;
+        }
+
+        return 0;
+    }
+
+    @Override
+    public int updataStaff(Staff staff) {
+        System.out.println(staff.getStaffName());
+        String sql="update staff set staffId = ?,staffName=?," +
+                "idCard=? ,phone=?,address=?,createdTime=?,status=?,roleId=? WHERE id=?";
+        Object[]objects={staff.getStaffId(),staff.getStaffName(),staff.getIdCard(),staff.getPhone(),
+        staff.getAddress(),staff.getCreatedTime(),staff.getStatus(),staff.getRoleid(),staff.getId()};
+       return baseDao.executeUpdate(sql,objects);
+
+    }
+
+    @Override
+    public int insertStaff(Staff staff) {
+        String sql="insert into staff (staffId,staffName,idCard,phone,address,createdTime,status,roleId) values (?,?,?,?,?,?,?,?)";
+        Object[]objects={staff.getStaffId(),staff.getStaffName(),staff.getIdCard(),staff.getPhone(),
+                staff.getAddress(),staff.getCreatedTime(),staff.getStatus(),staff.getRoleid()};
+
+        return baseDao.executeUpdate(sql,objects);
+    }
+
+    @Override
+    public int updataStaffRoid(String id) {
+        String sql="select status from staff where id=?";
+        Object[]objects={id};
+        List<Map<String, Object>> list = baseDao.executeQuery(sql, objects);
+        if(!list.isEmpty()){
+        Integer status = IntegerUtils.ToInteger(list.get(0).get("status")+"");
+        status =status==1?2:1;
+         sql="update staff set status=? where id = ?";
+         Object[]objects1={status,id};
+         return baseDao.executeUpdate(sql,objects1);
+        }
+        return 0;
+    }
+
+
+}

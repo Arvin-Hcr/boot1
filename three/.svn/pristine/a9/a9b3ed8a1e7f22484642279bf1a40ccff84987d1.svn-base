@@ -1,0 +1,70 @@
+package com.whqfl.dao.impl;
+
+import com.whqfl.dao.UserDao;
+import com.whqfl.entity.User;
+import com.whqfl.util.BaseDao;
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.List;
+
+/**
+ * @authoor 秦林海
+ * @date 2019/12/25
+ */
+public class UserDaoImpl implements UserDao {
+    private BaseDao baseDao=new BaseDao();
+    /**
+     * 按照用户 id，名字，查询所有员工的信息
+     * @param pageSize
+     * @param pageNumber
+     * @param searchId
+     * @param searchName
+     * @return
+     */
+    @Override
+    public List<User> getAllUser(Integer pageSize, Integer pageNumber, String searchId, String searchName) {
+        String sql="select u.*,c.amount amount,c.credit credit,ct.`name` levelName from user u, card c, cardtype ct where u.cardId=c.cardId and ct.`level`=c.levelId ";
+        if(!StringUtils.isBlank(searchId)){
+            sql=sql+" and u.userId="+searchId;
+        }
+        if(!StringUtils.isBlank(searchName)){
+            sql=sql+" and u.userName='"+searchName+"'";
+        }
+        sql=sql+" limit ?,?";
+        System.out.printf(sql);
+        Object [] params={(pageNumber-1)*pageSize,pageSize};
+        List<User> userList=baseDao.queryList(sql,params,User.class);
+        if(userList!=null && userList.size()>0){
+            return userList;
+        }
+
+        return userList;
+    }
+
+    /**
+     * 按照用户ID，名字查询总条数
+     * @param searchId
+     * @param searchName
+     * @return
+     */
+    @Override
+    public int getAllUsercount(String searchId, String searchName) {
+        String sql="select u.*,c.amount amount,c.credit credit,ct.`name` levelName from user u, card c, cardtype ct where u.cardId=c.cardId and ct.`level`=c.levelId ";
+        if(!StringUtils.isBlank(searchId)){
+            sql=sql+" and u.userId='"+searchId+"'";
+        }
+        if(!StringUtils.isBlank(searchName)){
+            sql=sql+" and u.userName='"+searchName+"'";
+        }
+        List<User> userList=baseDao.queryList(sql,null,User.class);
+        int count=0;
+        if(userList!=null && userList.size()>0){
+            count=userList.size();
+        }
+        return count;
+
+
+    }
+
+
+}

@@ -1,0 +1,75 @@
+package com.whqfl.service;
+
+import com.whqfl.entity.Card;
+import com.whqfl.entity.User;
+import com.whqfl.servlet.UpdateTreeServlet;
+import com.whqfl.util.BusinessException;
+
+import java.util.List;
+
+/**
+ * @authoor 秦林海
+ * @date 2019/12/25
+ */
+public interface UserService {
+    /**
+     * 按照用户 id，名字，查询所有员工的信息
+     * @param pageSize
+     * @param pageNumber
+     * @param searchId
+     * @param searchName
+     * @return
+     */
+    List<User> getAllUser(Integer pageSize, Integer pageNumber, String searchId, String searchName,String cardId) throws Exception;
+    /**
+     * 按照用户ID，名字查询总条数
+     * @param searchId
+     * @param searchName
+     * @return
+     */
+    int getAllUsercount(String searchId, String searchName);
+
+
+
+    int updateUser(String userName,String phone,Integer status,String idCard,String birthday,Integer sex,String address,String momo,String area,Integer userId) throws Exception;
+    /**
+     * 通过会员ID规则删除
+     * @return
+     */
+    int delUser(Integer userId) throws Exception;
+
+    /**
+     * 新增会员
+     * @param userId
+     * @param userName
+     * @param phone
+     * @param idCard
+     * @param birthday
+     * @param sex
+     * @param address
+     * @param area
+     * @param createdTime
+     * @param cardId
+     * @param momo
+     * @param staffId
+     * @return
+     */
+    int insertUser(Integer userId,String userName,String phone,Integer userStatus,String idCard,String birthday,Integer sex,
+                   String address,String area,String createdTime,Integer cardId,String momo,
+            Integer staffId) throws Exception;
+
+    int insertCard(Integer cardId,Integer userId,Double amount,Integer credit,Integer cardStatus,Integer staffId,Integer levelId) throws Exception;
+    /**
+     * 获得用户的最后一个用户id
+     * @return
+     */
+    Integer getUserLastUserID();
+
+    /**
+     * 获得最后一张卡的卡号
+     * @return
+     */
+    Integer getUserLastCardId();
+
+
+}

@@ -1,0 +1,19 @@
+package com.whqfl.dao;
+
+import com.whqfl.entity.ConsumOrder;
+
+/**
+ * @author WCX
+ * @data 2019/12/27 21:38
+ * @describe
+ */
+public interface ConsumDao {
+    /**
+     * 新增商品消费
+     *
+     */
+    int insertConsumOrder(ConsumOrder consumOrder);
+}
+/**
+ * 查找商品
+ */

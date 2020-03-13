@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>员工列表</title>
+    <link type="text/css" rel="stylesheet" href="../common/bootstrap/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="../common/bootstrap/table/bootstrap-table.min.css">
+    <link type="text/css" rel="stylesheet" href="../common/validate/bootstrapValidator.css">
+    <link type="text/css" rel="stylesheet" href="../common/toastr/toastr.min.css">
+    <link type="text/css" rel="stylesheet" href="../common/css/common.css">
+</head>
+<body>
+<div class="form-groupd">
+    <label for="searchName" class="label-control">员工姓名</label>
+    <input type="text" class="form-control" id="searchName" placeholder="规则名字">
+</div>
+<div class="form-groupd">
+    <label for="searchStartTime" class="label-control">入职时间</label>
+    <input type="text" class="form-control" id="searchStartTime" placeholder="入职时间">
+</div>
+<div class="form-groupd">
+    <label for="searchName" class="label-control">入职状态</label>
+    <select class="form-control" id="searchStatus">
+        <option value="-1">全部</option>
+        <option value="1">在职</option>
+        <option value="2">离职</option>
+        <option value="3">黑名单</option>
+    </select>
+</div>
+<button type="button" class="btn btn-primary" onclick="rechargeManager.search()">搜索</button>
+<button type="button" class="btn btn-primary" onclick="rechargeManager.add()">新增人员</button>
+<div class="tab-pane">
+    <table class="table table-bordered table-striped" id="rechargeRuleList">
+        <thead style="background-color: #BEDDFA">
+
+        </thead>
+    </table>
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    员工列表信息
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form id="ruleForm">
+                    <div class="row">
+                        <div class="col-md-4" hidden>
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">编号</span>
+                                <input class="form-control" placeholder="编号" name="id" id="Id">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">员工姓名</span>
+                                <input class="form-control" placeholder="员工姓名" name="staffName" id="staffName">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">员工职位</span>
+                                <select class="form-control" id="staffroldId">
+                                    <option value="1">管理员</option>
+                                    <option value="2">台吧</option>
+                                    <option value="3">前台</option>
+                                    <option value="4">收银员</option>
+                                    <option value="5">店长</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">电话号码</span>
+                                <input class="form-control" placeholder="电话号码" name="staffPhone" id="staffPhone">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">身份证号</span>
+                                <input class="form-control" placeholder="身份证号" name="staffIdcard" id="staffIdcard">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">状态</span>
+                                <select class="form-control" id="staffStatus">
+                                    <option value="1">在职</option>
+                                    <option value="2">离职</option>
+                                    <option value="3">黑名单</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                            <div class="col-md-4" >
+                                <div class="form-group input-group">
+                                    <span class="input-group-addon">员工ID</span>
+                                    <input class="form-control" placeholder="编号" name="staffId" id="staffId">
+                                </div>
+                            </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">入职时间</span>
+                                <input class="form-control" placeholder="入职时间" readonly="readonly" name="staffData" id="staffData">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">家庭地址</span>
+                                <input class="form-control" placeholder="家庭地址" name="staffAdress" id="staffAdress">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+                <button type="button" class="btn btn-primary" onclick="rechargeManager.operate();">
+                    确认
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<!-- system confirm modal start -->
+<div id="ycf-alert" class="modal">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span
+                        class="sr-only">Close</span></button>
+                <h5 class="modal-title"><i class="fa fa-exclamation-circle"></i> [Title]</h5>
+            </div>
+            <div class="modal-body">
+                <p>[Message]</p>
+            </div>
+            <div class="modal-footer">
+                <center>
+                    <button type="button" class="btn btn-primary ok" data-dismiss="modal">[BtnOk]</button>
+                    <button type="button" class="btn btn-default cancel" data-dismiss="modal">[BtnCancel]</button>
+                </center>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../common/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../common/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../common/bootstrap/table/bootstrap-table.min.js"></script>
+<script type="text/javascript" src="../common/bootstrap/table/bootstrap-table-zh-CN.min.js"></script>
+<script type="text/javascript" src="../common/validate/bootstrapValidator.min.js"></script>
+<script type="text/javascript" src="../common/confirm/bootstrap.confirm.js"></script>
+<script type="text/javascript" src="../common/toastr/toastr.min.js"></script>
+<script type="text/javascript" src="../common/laydate/laydate.js"></script>
+<script type="text/javascript" src="staffListApi.js"></script>
+<script type="text/javascript">
+    laydate.render({
+        elem: '#searchStartTime',
+        type: 'date',
+        done:function () {
+            var a = $("#searchStartTime").val();
+            var b = $("#searchEndTime").val();
+            if (new Date(a) > new Date(b)){
+                toastr['error']("开始时间必须小于结束时间");
+                $("#searchStartTime").val("");
+            }
+        }
+    })
+    laydate.render({
+        elem: '#searchEndTime',
+        type: 'date',
+        done:function () {
+            var a = $("#searchStartTime").val();
+            var b = $("#searchEndTime").val();
+            if (new Date(a) > new Date(b)){
+                toastr['error']("开始时间必须小于结束时间");
+                $("#searchEndTime").val("");
+            }
+        }
+    })
+    laydate.render({
+        elem: '#ruleEndDate',
+        type: 'date'
+    })
+</script>
+</html>

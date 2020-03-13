@@ -1,0 +1,25 @@
+package com.whqfl.dao.impl;
+
+import com.whqfl.dao.CardDao;
+import com.whqfl.entity.CardType;
+import com.whqfl.util.BaseDao;
+
+import java.util.List;
+
+/**
+ * @authoor 秦林海
+ * @date 2019/12/26
+ */
+public class CardDaoImpl implements CardDao {
+    private BaseDao baseDao=new BaseDao();
+    @Override
+    public List<CardType> getCardType() {
+        String sql="select * from cardtype where status=1";
+        List<CardType> cardTypeList= baseDao.queryList(sql,null,CardType.class);
+        if(cardTypeList!=null && cardTypeList.size()>0){
+            return  cardTypeList;
+        }
+
+        return null;
+    }
+}

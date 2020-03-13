@@ -1,0 +1,20 @@
+package com.whqfl.service.impl;
+
+import com.whqfl.dao.CardDao;
+import com.whqfl.dao.impl.CardDaoImpl;
+import com.whqfl.entity.CardType;
+import com.whqfl.service.CardService;
+
+import java.util.List;
+
+/**
+ * @authoor 秦林海
+ * @date 2019/12/26
+ */
+public class CardServiceImpl implements CardService {
+    private CardDao cardDao=new CardDaoImpl();
+    @Override
+    public List<CardType> getCardType() {
+        return cardDao.getCardType();
+    }
+}

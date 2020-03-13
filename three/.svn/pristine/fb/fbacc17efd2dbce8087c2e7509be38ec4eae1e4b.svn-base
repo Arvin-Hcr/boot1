@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品信息</title>
+    <link type="text/css" rel="stylesheet" href="../common/bootstrap/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="../common/bootstrap/table/bootstrap-table.min.css">
+    <link type="text/css" rel="stylesheet" href="../common/validate/bootstrapValidator.css">
+    <link type="text/css" rel="stylesheet" href="../common/toastr/toastr.min.css">
+    <link rel="stylesheet" href="../common/css/common.css"/>
+</head>
+<body>
+<div class="form-groupd">
+    <label for="searchName" class="label-control">商品编号</label>
+    <input type="text" class="form-control" id="searchGoodsId" placeholder="商品编号">
+</div>
+<div class="form-groupd">
+    <label for="searchName" class="label-control">商品名字</label>
+    <input type="text" class="form-control" id="searchName" placeholder="商品名字">
+</div>
+<button type="button" class="btn btn-primary" onclick="goodsList.search()">搜索</button>
+
+<!-- tableList -->
+<div class="tab-pane">
+    <table class="table table-striped table-hover table-bordered" id="showGoodsList">
+        <thead style="background-color: #BEDDFA">
+
+        </thead>
+    </table>
+</div>
+</body>
+<script type="text/javascript" src="../common/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../common/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../common/bootstrap/table/bootstrap-table.min.js"></script>
+<script type="text/javascript" src="../common/bootstrap/table/bootstrap-table-zh-CN.min.js"></script>
+<script type="text/javascript" src="../common/validate/bootstrapValidator.min.js"></script>
+<script type="text/javascript" src="../common/toastr/toastr.min.js"></script>
+<script type="text/javascript" src="../common/confirm/bootstrap.confirm.js"></script>
+<script type="text/javascript" src="../common/treeview/bootstrap-treeview.js"></script>
+<script type="text/javascript" src="../common/laydate/laydate.js"></script>
+<script type="text/javascript" src="goodsList.js"></script>
+<script type="text/javascript">
+</script>
+</html>

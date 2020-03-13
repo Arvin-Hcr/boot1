@@ -1,0 +1,18 @@
+package com.whqfl.service;
+
+import com.whqfl.entity.RechargeRule;
+
+import java.util.List;
+import java.util.Map;
+
+/**
+ * @author WCX
+ * @data 2019/12/25 8:35
+ * @describe
+ */
+public interface RechargeRuleService {
+    Map<String,Object> getRechargeRuleService(Integer pageNumber,Integer pageSize,String searchStartTime,
+                                              String searchEndTime,String searchName,Integer searchStatus);
+    int updateRechargeRulesById(String id, String ruleId, String ruleName, String ruleCoff, String ruleStatus, String ruleCreatedDate, String ruleEndDate, String ruleAmount)throws Exception;
+    int delRechargeRule(Integer id);
+}

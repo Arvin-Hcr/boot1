@@ -1,0 +1,35 @@
+package com.whqfl.service.impl;
+
+import com.whqfl.dao.NewsDao;
+import com.whqfl.dao.impl.NewsDaoImpl;
+import com.whqfl.entity.News;
+
+import com.whqfl.service.NewsService;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class NewsServiceImpl implements NewsService {
+
+private NewsDao newsDao=new NewsDaoImpl();
+
+    @Override
+    public Map<String, Object> getNewsList(Integer pageNumber, Integer pageSize, String searchStartTime, String searchEndTime, String searchName, Integer searchStatus) throws Exception {
+        pageNumber = (pageNumber - 1) * pageSize;
+        List<News> newsList = newsDao.getNewsList(pageNumber, pageSize, searchStartTime, searchEndTime, searchName, searchStatus);
+        int len = newsDao.getNewsListCount(searchStartTime,searchEndTime,searchName,searchStatus);
+        Map<String,Object> map = new HashMap<>();
+        map.put("list",newsList);
+        map.put("count",len);
+        return map;
+    }
+
+    public static void main(String[] args) throws Exception {
+        NewsService newsService=new NewsServiceImpl();
+        Integer pageSize=1;
+        Integer pageNumber=4;
+        System.out.println(newsService.getNewsList(pageNumber,pageSize,null,null,null,null));
+    }
+
+}

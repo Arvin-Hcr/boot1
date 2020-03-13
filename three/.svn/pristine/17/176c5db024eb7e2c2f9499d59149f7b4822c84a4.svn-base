@@ -1,0 +1,43 @@
+package com.whqfl.dao;
+
+import com.whqfl.entity.Card;
+import com.whqfl.entity.CardType;
+
+import java.util.List;
+import java.util.Map;
+
+/**
+ * @authoor 秦林海
+ * @date 2019/12/26
+ */
+public interface CardDao {
+    /**
+     * 获得会员卡的所有等级
+     * @return
+     */
+    List<CardType> getCardType();
+
+    /**
+     * 获得所有卡的信息
+     * @param pageNumber
+     * @param pageSize
+     * @param searchName
+     * @param searchId
+     * @return
+     */
+    List<Card> getAllCardList(Integer pageNumber,Integer pageSize,String searchName,String searchId );
+    /**
+     * 按照用户ID，名字查询总条数
+     * @param searchId
+     * @param searchName
+     * @return
+     */
+    int getAllCardCount(String searchId, String searchName);
+
+    /**
+     * 根据cardId改变cardId的状态
+     * @param card
+     * @return
+     */
+    int delCardStatus(Card card);
+}

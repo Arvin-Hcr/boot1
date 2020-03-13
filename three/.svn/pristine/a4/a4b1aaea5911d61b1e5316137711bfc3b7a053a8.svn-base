@@ -1,0 +1,19 @@
+package com.whqfl.service;
+
+/**
+ * @author WCX
+ * @data 2019/12/27 21:54
+ * @describe
+ */
+public interface ConsumeService {
+    /**
+     * 新增商品消费
+     * @param orderId
+     * @param cardId
+     * @param price
+     * @param pay
+     * @param momo
+     * @return
+     */
+    int insertConsumerOrder(Integer orderId,Integer cardId,double price,double pay,String momo);
+}

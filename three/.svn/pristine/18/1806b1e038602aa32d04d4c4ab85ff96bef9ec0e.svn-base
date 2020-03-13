@@ -1,0 +1,26 @@
+package com.whqfl.dao.impl;
+
+import com.whqfl.dao.StaffDao;
+import com.whqfl.util.BaseDao;
+
+import java.util.List;
+import java.util.Map;
+
+/**
+ * @author
+ * @date 2019/12/23
+**/
+public class StaffDaoImpl implements StaffDao {
+    private BaseDao baseDao = new BaseDao();
+
+    @Override
+    public Map<String, Object> login(Integer staffId, String password) {
+        String sql = "select * from staff where staffId = ? and password = ?";
+        Object[] params = {staffId,password};
+        List<Map<String, Object>> mapList = baseDao.executeQuery(sql,params);
+        if (mapList != null && mapList.size() > 0){
+            return mapList.get(0);
+        }
+        return null;
+    }
+}

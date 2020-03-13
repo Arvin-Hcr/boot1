@@ -1,0 +1,37 @@
+package com.whqfl.service.impl;
+
+import com.whqfl.dao.RechargerecordDao;
+import com.whqfl.dao.impl.RechargerecordImpl;
+import com.whqfl.entity.Rechargerecord;
+import com.whqfl.service.RechargerecordService;
+import com.whqfl.util.BusinessException;
+import com.whqfl.util.DateUtils;
+
+import java.util.Date;
+
+/**
+ * @authoor 秦林海
+ * @date 2019/12/27
+ */
+public class RechargerecordServiceImpl implements RechargerecordService {
+    private RechargerecordDao rechargerecordDao=new RechargerecordImpl();
+    private Rechargerecord rechargerecord=new Rechargerecord();
+    @Override
+    public int addRechargerecord(Integer cardid, Double rechargeamount, Double afteramount, Double beforeamount, Integer ruleid, String createdtime, Integer staffid, String momo) throws BusinessException {
+        if(cardid==null && cardid==0){
+            throw  new BusinessException("cardid不能为空");
+        }
+        if(ruleid==null && ruleid==0){
+            throw  new BusinessException("ruleid不能为空");
+        }
+        rechargerecord.setCardId(cardid);
+        rechargerecord.setRechargeAmount(rechargeamount);
+        rechargerecord.setAfterAmount(afteramount);
+        rechargerecord.setBeforeAmount(0.0);
+        rechargerecord.setRuleId(ruleid);
+        rechargerecord.setCreatedTime(DateUtils.toFormat(new Date()));
+        rechargerecord.setStaffId(staffid);
+        rechargerecord.setMomo("新增会员卡");
+        return rechargerecordDao.addRechargerecord(rechargerecord);
+    }
+}

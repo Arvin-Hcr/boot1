@@ -1,0 +1,43 @@
+/**
+ * @author 秦林海
+ * @date 2019/12/23
+ * 初始化
+ **/
+$(function () {
+
+})
+
+/**
+ * @author 秦林海
+ * @date 2019/12/23
+ * 定义函数
+ **/
+var loginManager = {};
+
+loginManager.login = function () {
+    $.ajax({
+        url: "/LoginServlet",
+        type: "post",
+        data: {
+            "userName": $("#loginName").val(),
+            "password": $("#loginPwd").val()
+        },
+        dataType: "json",
+        success: function (result) {
+            if (result.status == 1 && result.data != null){
+                toastr['success'](result.message);
+                window.location.href = "index/views/main.html";
+                /**
+                 * localStorage 是一个数据库
+                 * 只能存 键值对 而且是前端的 小型数据库 数据存放在 页面中
+                 */
+                localStorage.setItem("userName",result.data.staffName);
+                localStorage.setItem("staffId",result.data.staffId);
+                localStorage.setItem("roleId",result.data.roleId);
+            }else {
+                toastr['error'](result.message);
+            }
+        }
+    })
+}
+

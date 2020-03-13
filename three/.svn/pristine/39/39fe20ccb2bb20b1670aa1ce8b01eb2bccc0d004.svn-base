@@ -1,0 +1,25 @@
+package com.whqfl.dao.impl;
+
+import com.whqfl.dao.StatisticsDao;
+import com.whqfl.util.BaseDao;
+
+import java.util.List;
+import java.util.Map;
+
+/**
+ * @author 彭于晏
+ * @data 2019/12/27 22:51
+ * @describe
+ */
+public class StatisticsDaoImp implements StatisticsDao {
+    private BaseDao baseDao=new BaseDao();
+    @Override
+    public List<Map<String, Object>> getNearOneYearUser() {
+        String sql="select count(*) len ,MONTH(createdTime) mouth from user " +
+                "where  createdTime is not NULL and createdTime BETWEEN DATE_SUB(CURDATE(),INTERVAL 12 MONTH) " +
+                "and CURDATE()   " +
+                "GROUP BY MONTH(createdTime)";
+        List list = baseDao.executeQuery(sql, null);
+        return list;
+    }
+}

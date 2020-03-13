@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1 style="">
+    会员增长趋势
+</h1>
+<!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+<div id="main" style="width: 1000px;height:400px;"></div>
+</body>
+<script type="text/javascript" src="/common/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="/common/echars/echarts.min.js"></script>
+<script type="text/javascript">
+    $.ajax({
+        url: "/GetNearYearUserServlet",
+        type: "post",
+        dataType: "json",
+        success: function (result) {
+            if (result.data != null) {
+                // 基于准备好的dom，初始化echarts实例
+                var myChart = echarts.init(document.getElementById('main'));
+                // 指定图表的配置项和数据
+                var option = {
+                    xAxis: {
+                        type: 'category',
+                        data: result.data.m
+                    },
+                    tooltip: {},
+                    yAxis: {
+                        type: 'value'
+                    },
+                    series: [{
+                        data: result.data.d,
+                        type: 'line'
+                    }]
+                };
+                // 使用刚指定的配置项和数据显示图表。
+                myChart.setOption(option);
+            }
+        }
+    })
+
+</script>
+</html>
+

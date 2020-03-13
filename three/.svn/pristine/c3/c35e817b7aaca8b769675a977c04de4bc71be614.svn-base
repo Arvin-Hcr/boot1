@@ -1,0 +1,11 @@
+package com.whqfl.service;
+
+import java.util.Map;
+
+public interface NewsService {
+
+    Map<String,Object> getNewsList(Integer pageNumber, Integer pageSize, String searchStartTime, String searchEndTime,
+                                           String searchName, Integer searchStatus) throws Exception;
+    int updateNewsId(String id, String ruleId, String ruleName, String ruleCoff, String ruleStatus, String ruleCreatedDate, String ruleEndDate, String ruleAmount)throws Exception;
+    int delNews(Integer id);
+}

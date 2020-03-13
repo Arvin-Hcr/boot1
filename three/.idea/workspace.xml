@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="untitledTest:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e2b2c800-a09c-4e65-8484-ca980d1887e3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/web/index/img/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/dao/CardDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/dao/CardDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/dao/CategoryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/dao/CategoryDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/dao/ConsumDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/dao/ConsumDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/dao/GoodsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/dao/GoodsDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/dao/MenuDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/dao/MenuDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/dao/OderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/dao/OderDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/dao/RechargeRuleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/dao/RechargeRuleDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/dao/RechargerecordDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/dao/RechargerecordDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/dao/StaffMangerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/dao/StaffMangerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/dao/StatisticsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/dao/StatisticsDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/dao/impl/CardDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/dao/impl/CardDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/dao/impl/CardManagerDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/dao/impl/CardManagerDaoImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/dao/impl/ConsumDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/dao/impl/ConsumDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/dao/impl/GoodsDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/dao/impl/GoodsDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/dao/impl/MenuDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/dao/impl/MenuDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/dao/impl/NewsDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/dao/impl/NewsDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/dao/impl/OderDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/dao/impl/OderDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/dao/impl/RechargeRuleDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/dao/impl/RechargeRuleDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/dao/impl/RechargerecordImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/dao/impl/RechargerecordImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/dao/impl/RoleMangerDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/dao/impl/RoleMangerDaoImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/dao/impl/StaffDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/dao/impl/StaffDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/dao/impl/StaffMangerDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/dao/impl/StaffMangerDaoImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/dao/impl/StatisticsDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/dao/impl/StatisticsDaoImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/dao/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/dao/impl/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/entity/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/entity/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/entity/CardType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/entity/CardType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/entity/CateGory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/entity/CateGory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/entity/Goods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/entity/Goods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/entity/MenuTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/entity/MenuTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/entity/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/entity/Rechargerecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/entity/Rechargerecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/entity/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/entity/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/entity/Staff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/service/CardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/service/CardService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/service/CategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/service/ConsumeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/service/ConsumeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/service/GoodsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/service/GoodsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/service/OderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/service/OderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/service/RechargeRuleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/service/RechargeRuleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/service/RechargerecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/service/RechargerecordService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/service/RoleMangerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/service/RoleMangerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/service/impl/CardManagerServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/service/impl/CardManagerServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/service/impl/CardServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/service/impl/CardServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/service/impl/ConsumeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/service/impl/ConsumeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/service/impl/GoodsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/service/impl/GoodsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/service/impl/OderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/service/impl/OderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/service/impl/RechargeRuleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/service/impl/RechargeRuleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/service/impl/RechargerecordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/service/impl/RechargerecordServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/service/impl/RoleMangerServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/service/impl/RoleMangerServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/service/impl/StaffMangerServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/service/impl/StaffMangerServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/service/impl/StatisticServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/service/impl/StatisticServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/servlet/AddGoodsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/servlet/AddGoodsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/servlet/AddUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/servlet/AddUserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/servlet/ConsumGoodsListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/servlet/ConsumGoodsListServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/servlet/DelOderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/servlet/DelOderServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/servlet/DelRechargeRuleServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/servlet/DelRechargeRuleServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/servlet/DelUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/servlet/DelUserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/servlet/GetAllUnitServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/servlet/GetAllUnitServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/servlet/GetOderListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/servlet/GetOderListServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/servlet/GetRechargeRuleServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/servlet/GetRechargeRuleServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/servlet/UpdateConsumeOrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/servlet/UpdateConsumeOrderServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/servlet/UpdateGoodsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/servlet/UpdateGoodsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/servlet/UpdateOderByIdServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/servlet/UpdateOderByIdServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/servlet/UpdateRechargeRuleByIdServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/servlet/UpdateRechargeRuleByIdServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/util/BaseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/util/BaseDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/whqfl/util/DateUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/whqfl/util/DateUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/card/card.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/card/card.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/card/cardAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/card/cardAPI.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/card/parallelCardApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/card/parallelCardApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/card/relpCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/card/relpCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/card/slotCard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/card/slotCard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/card/transferCardApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/card/transferCardApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/category/categoryList.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/category/categoryList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/category/categoryList.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/category/categoryList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/goods/addGoods.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/goods/addGoods.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/goods/addGoods.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/goods/addGoods.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/goods/goodsList.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/goods/goodsList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/goods/goodsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/goods/goodsList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/index/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index/views/changePass/ChangePass.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/index/views/changePass/ChangePass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/index/views/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index/views/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/index/views/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/login/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/news/newMain.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/news/newMain.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/news/newMain.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/news/newMain.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/oder/Consumer.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/oder/Consumer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/oder/ConsumerApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/oder/ConsumerApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/oder/oderList.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/oder/oderList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/oder/oderList.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/oder/oderList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/rechargeRule/rechargeRuleApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/rechargeRule/rechargeRuleApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/role/roleApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/role/roleApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/staff/staffList.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/staff/staffList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/staff/staffListApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/staff/staffListApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/user/userAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/user/userAPI.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/user/userAddApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/user/userAddApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/user/userRecharge.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/user/userRecharge.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jsp File" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>,</find>
+      <find>rechargeManager</find>
+      <find>updateGoodsServlet</find>
+      <find>roleManager.operate</find>
+      <find>roleManager.add</find>
+      <find>rechargeManager.add</find>
+      <find>main</find>
+      <find>table-bordered</find>
+      <find>recharge</find>
+      <find>userRecharge</find>
+      <find>String</find>
+      <find>rechargeRuleList</find>
+      <find>main3</find>
+      <find>roleManager.add()</find>
+      <find>roleManager.search</find>
+      <find>transferCard.search</find>
+      <find>transferCard.seachUserList</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>roleManager</replace>
+      <replace>roleRuleList</replace>
+      <replace>tree</replace>
+      <replace>UpdateGoodsServlet</replace>
+      <replace>transferCard</replace>
+      <replace>transferCard.seachUserList</replace>
+    </replaceStrings>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/com/whqfl/dao/impl/RoleMangerDaoImp.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="false" />
+    <option name="FILTER_DEBUG" value="false" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1VstOwgLjm3GcrJUGJp0XVh9a2Y" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1577973519592" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.20325203" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\代码\自己\untitledTest\web\index\img" />
+      <recent name="E:\代码\自己\untitledTest\web\index\views" />
+      <recent name="E:\代码\untitledTest\web" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\HCR\Desktop\新建文件夹 (2)\%E4%B8%80%E6%9C%9F%E9%A1%B9%E7%9B%AE2\一期项目2\web\index\views\changePass\views" />
+      <recent name="C:\Users\HCR\Desktop\新建文件夹 (2)\%E4%B8%80%E6%9C%9F%E9%A1%B9%E7%9B%AE2\一期项目2\web\index\views\changePass" />
+      <recent name="E:\代码\自己\untitledTest\web\index\img" />
+      <recent name="E:\代码\untitledTest\web\staff" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.43">
+    <configuration name="DateUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.whqfl.util.DateUtils" />
+      <module name="untitledTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.whqfl.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StaffMangerDaoImp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.whqfl.dao.impl.StaffMangerDaoImp" />
+      <module name="untitledTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.whqfl.dao.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StatisticServiceImp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.whqfl.service.impl.StatisticServiceImp" />
+      <module name="untitledTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.whqfl.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.whqfl.service.impl.UserServiceImpl" />
+      <module name="untitledTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.whqfl.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main" />
+      <module name="untitledTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 8.5.43" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.01" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8">
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+      <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="untitledTest:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Tomcat_8_5_43_untitledTest" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="55975" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="untitledTest:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.DateUtils" />
+      <item itemvalue="Application.main" />
+      <item itemvalue="Application.StaffMangerDaoImp" />
+      <item itemvalue="Application.StatisticServiceImp" />
+      <item itemvalue="Application.UserServiceImpl" />
+      <item itemvalue="Tomcat Server.Tomcat 8.5.43" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.StatisticServiceImp" />
+        <item itemvalue="Application.DateUtils" />
+        <item itemvalue="Application.main" />
+        <item itemvalue="Application.UserServiceImpl" />
+        <item itemvalue="Application.StaffMangerDaoImp" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <option name="contentProportion" value="0.1181694" />
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\HCR\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\Users\HCR\Desktop\备份\three" />
+          <option name="myCopyRoot" value="C:\Users\HCR\Desktop\备份\three" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\Users\HCR\Desktop\备份\three" />
+          <option name="myCopyRoot" value="C:\Users\HCR\Desktop\备份\three" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e2b2c800-a09c-4e65-8484-ca980d1887e3" name="Default Changelist" comment="" />
+      <created>1577184584149</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1577184584149</updated>
+      <workItem from="1577184587860" duration="6145000" />
+      <workItem from="1577191297745" duration="2211000" />
+      <workItem from="1577194255858" duration="27000" />
+      <workItem from="1577194669775" duration="5023000" />
+      <workItem from="1577232720034" duration="29702000" />
+      <workItem from="1577284028914" duration="309000" />
+      <workItem from="1577319351282" duration="62075000" />
+      <workItem from="1577492020035" duration="1271000" />
+      <workItem from="1577495225862" duration="448000" />
+      <workItem from="1577495712993" duration="9436000" />
+      <workItem from="1598597031106" duration="17827000" />
+      <workItem from="1577600022097" duration="18639000" />
+      <workItem from="1577665078346" duration="34165000" />
+      <workItem from="1577709772810" duration="3526000" />
+      <workItem from="1577715298493" duration="1329000" />
+      <workItem from="1577751701465" duration="3035000" />
+      <workItem from="1577762297276" duration="3046000" />
+      <workItem from="1577875597124" duration="231000" />
+      <workItem from="1577924540000" duration="24456000" />
+      <workItem from="1578010737206" duration="9171000" />
+      <workItem from="1584000634915" duration="1346000" />
+      <workItem from="1584077410938" duration="1744000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="441" y="37" key="#Tomcat_8.5.43" timestamp="1584077441583">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="441" y="37" key="#Tomcat_8.5.43/0.0.1536.864@0.0.1536.864" timestamp="1584077441583" />
+    <state x="361" y="90" key="#Tomcat_Server" timestamp="1584077435254">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="361" y="90" key="#Tomcat_Server/0.0.1536.864@0.0.1536.864" timestamp="1584077435254" />
+    <state x="499" y="187" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1579245242211">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="499" y="187" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1579245242211" />
+    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579176445939">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1579176445939" />
+    <state x="574" y="141" key="#com.intellij.ide.util.MemberChooser" timestamp="1579274768840">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="574" y="141" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1579274768840" />
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1584077432713">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1584077432713" />
+    <state width="1290" height="223" key="GridCell.Tab.0.bottom" timestamp="1584080343267">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1290" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1584080343267" />
+    <state width="1290" height="223" key="GridCell.Tab.0.center" timestamp="1584080343267">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1290" height="223" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1584080343267" />
+    <state width="1290" height="223" key="GridCell.Tab.0.left" timestamp="1584080343267">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1290" height="223" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1584080343267" />
+    <state width="1290" height="223" key="GridCell.Tab.0.right" timestamp="1584080343267">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1290" height="223" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1584080343267" />
+    <state width="1290" height="223" key="GridCell.Tab.1.bottom" timestamp="1584080343267">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1290" height="223" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1584080343267" />
+    <state width="1290" height="223" key="GridCell.Tab.1.center" timestamp="1584080343267">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1290" height="223" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1584080343267" />
+    <state width="1290" height="223" key="GridCell.Tab.1.left" timestamp="1584080343267">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1290" height="223" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1584080343267" />
+    <state width="1290" height="223" key="GridCell.Tab.1.right" timestamp="1584080343267">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1290" height="223" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1584080343267" />
+    <state width="1290" height="223" key="GridCell.Tab.2.bottom" timestamp="1584080343267">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1290" height="223" key="GridCell.Tab.2.bottom/0.0.1536.864@0.0.1536.864" timestamp="1584080343267" />
+    <state width="1290" height="223" key="GridCell.Tab.2.center" timestamp="1584080343267">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1290" height="223" key="GridCell.Tab.2.center/0.0.1536.864@0.0.1536.864" timestamp="1584080343267" />
+    <state width="1290" height="223" key="GridCell.Tab.2.left" timestamp="1584080343267">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1290" height="223" key="GridCell.Tab.2.left/0.0.1536.864@0.0.1536.864" timestamp="1584080343267" />
+    <state width="1290" height="223" key="GridCell.Tab.2.right" timestamp="1584080343267">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1290" height="223" key="GridCell.Tab.2.right/0.0.1536.864@0.0.1536.864" timestamp="1584080343267" />
+    <state width="1290" height="223" key="GridCell.Tab.3.bottom" timestamp="1584080343267">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1290" height="223" key="GridCell.Tab.3.bottom/0.0.1536.864@0.0.1536.864" timestamp="1584080343267" />
+    <state width="1290" height="223" key="GridCell.Tab.3.center" timestamp="1584080343267">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1290" height="223" key="GridCell.Tab.3.center/0.0.1536.864@0.0.1536.864" timestamp="1584080343267" />
+    <state width="1290" height="223" key="GridCell.Tab.3.left" timestamp="1584080343267">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1290" height="223" key="GridCell.Tab.3.left/0.0.1536.864@0.0.1536.864" timestamp="1584080343267" />
+    <state width="1290" height="223" key="GridCell.Tab.3.right" timestamp="1584080343267">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1290" height="223" key="GridCell.Tab.3.right/0.0.1536.864@0.0.1536.864" timestamp="1584080343267" />
+    <state x="262" y="73" key="SettingsEditor" timestamp="1578053938617">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="262" y="73" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1578053938617" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/web/card/parallelCard.html</url>
+          <line>67</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>untitledTest:war exploded</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.20325203" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Web (untitledTest)|Web</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.20325203" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.20325203" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.20325203" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>untitledTest</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.20325203" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>commons-lang3-3.1</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.20325203" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.20325203" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

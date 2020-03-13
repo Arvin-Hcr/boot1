@@ -1,0 +1,49 @@
+package com.whqfl.servlet;
+
+import com.google.gson.Gson;
+import com.whqfl.entity.ResponseDto;
+import com.whqfl.service.RechargeRuleService;
+import com.whqfl.service.impl.RechargeRuleServiceImpl;
+import com.whqfl.util.IntegerUtils;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.Map;
+
+@WebServlet(name = "GetRechargeRuleServlet",urlPatterns = "/GetRechargeRuleServlet")
+public class GetRechargeRuleServlet extends HttpServlet {
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doPost(req,resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("utf-8");
+        resp.setCharacterEncoding("utf-8");
+        resp.setContentType("text/html;charset=utf-8");
+        ResponseDto responseDto=new ResponseDto();
+        Integer pageNumber= IntegerUtils.ToInteger(req.getParameter("pageNumber"));
+        Integer pageSize=IntegerUtils.ToInteger(req.getParameter("pageSize"));
+        String searchStartTime = req.getParameter("searchStartTime");
+        String searchEndTime = req.getParameter("searchEndTime");
+        String searchName = req.getParameter("searchName");
+        Integer searchStatus = IntegerUtils.ToInteger(req.getParameter("searchStatus"));
+        RechargeRuleService rechargeRuleService=new RechargeRuleServiceImpl();
+        try {
+            Map<String, Object> rechargeRuleService1 = rechargeRuleService.getRechargeRuleService(pageNumber, pageSize, searchStartTime, searchEndTime, searchName, searchStatus);
+            responseDto.setData(rechargeRuleService1);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        responseDto.setMessage("操作成功");
+        responseDto.setStatus(ResponseDto.SUCCESS_CODE);
+        resp.getWriter().print(new Gson().toJson(responseDto));
+
+    }
+}

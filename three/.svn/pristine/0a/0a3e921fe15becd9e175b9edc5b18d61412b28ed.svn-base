@@ -1,0 +1,25 @@
+package com.whqfl.dao.impl;
+
+import com.whqfl.dao.ConsumDao;
+import com.whqfl.entity.ConsumOrder;
+import com.whqfl.util.BaseDao;
+
+/**
+ * @author WCX
+ * @data 2019/12/27 21:45
+ * @describe
+ */
+public class ConsumDaoImpl implements ConsumDao {
+    private BaseDao baseDao=new BaseDao();
+    @Override
+    /**
+     * 新增商品消费
+     */
+    public int insertConsumOrder(ConsumOrder consumOrder) {
+        String sql="insert `order` (orderId,cardId,cardType,price,pay,credit,status,momo,createdTime) values (?,?,?,?,?,?,?,?,?)";
+        Object[]params1={consumOrder.getOrderId(),consumOrder.getCardId(),consumOrder.getCardType(),consumOrder.getPrice(),consumOrder.getPay(),consumOrder.getCredit(),consumOrder.getStatus(),consumOrder.getMomo(),consumOrder.getCreatedtime()};
+
+        int i = baseDao.executeUpdate(sql, params1);
+        return i;
+    }
+}

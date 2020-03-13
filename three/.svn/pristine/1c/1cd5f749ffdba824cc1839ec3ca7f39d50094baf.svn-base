@@ -1,0 +1,148 @@
+package com.whqfl.dao.impl;
+
+import com.whqfl.dao.GoodsDao;
+import com.whqfl.entity.CateGory;
+import com.whqfl.entity.Goods;
+import com.whqfl.entity.Unit;
+import com.whqfl.util.BaseDao;
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.List;
+import java.util.Map;
+
+public class GoodsDaoImpl implements GoodsDao {
+    private BaseDao baseDao = new BaseDao();
+    @Override
+    public List<Goods> getAllGoodsInfo(Integer pageNumber, Integer pageSize, String searchId, String searchName) {
+        String sql = "select g.*,u.name uname,c.`name` cname from goods g left join unit u on g.unitId= u.id left join " +
+                "category c on g.categoryId=c.id where";
+        if (StringUtils.isNotBlank(searchId)) {
+            sql += " and g.goodsId = " + searchId;
+        }
+        if (StringUtils.isNotBlank(searchName)) {
+            sql += " and g.name like '%" + searchName+"%'";
+        }
+        sql += " order by g.goodsId asc limit ?,?";
+        Object[] params = {pageNumber, pageSize};
+        List<Goods> list = baseDao.queryList(sql, params, Goods.class);
+        return list;
+    }
+
+    @Override
+    public int getAllGoodsInfoCount(String goodsId, String searchName) {
+        String sql = "select count(1) len from goods where 1=1";
+        if (StringUtils.isNotBlank(goodsId)) {
+            sql += " and goodsId = " + goodsId;
+        }
+        if (StringUtils.isNotBlank(searchName)) {
+            searchName = "%" + searchName + "%";
+            sql += " and name like '" + searchName + "'";
+        }
+        List<Map<String, Object>> maps = baseDao.executeQuery(sql, null);
+        if (maps != null && maps.size() > 0) {
+            Map<String, Object> map = maps.get(0);
+            Integer res = Integer.parseInt(map.get("len") + "");
+            return res;
+        }
+        return 0;
+    }
+
+    @Override
+    public int delGoods(Integer goodsId, Integer status) {
+        status = status == 1 ? 2 : 1;
+        String sql = "update goods set status = ? where goodsId = " + goodsId;
+        Object[] params = {status};
+        int len = baseDao.executeUpdate(sql, params);
+        return len;
+    }
+
+    @Override
+    public int updateGoodsByGoodsId(Goods goods) {
+        String sql = "update goods set name = ?,code = ?,categoryId = ?,price = ?,unitId = ? where goodsId = ?";
+        Object[] params = {goods.getName(),goods.getCode(),goods.getCategoryId(),goods.getPrice(),goods.getUnitId()
+                ,goods.getGoodsId()};
+        return baseDao.executeUpdate(sql, params);
+    }
+
+    @Override
+    public List<CateGory> GetGoodsCategory() {
+        String sql = "select * from category where status = 1";
+        List<CateGory> cateGoryList = baseDao.executeQuery(sql,null);
+        return cateGoryList;
+
+    }
+
+    @Override
+    public List<CateGory> getAllCategory(Integer pageNumber, Integer pageSize, String searchId, String searchName) {
+        String sql="select * from " +
+                " category" +
+                " where 1=1 ";
+        if (StringUtils.isNotBlank(searchId)) {
+            searchId="%"+searchId+"%";
+            sql+=" and id like '"+searchId+"'";
+        }
+        if (StringUtils.isNotBlank(searchName)) {
+            searchName="'%"+searchName+"%'";
+            sql+=" and name like "+searchName;
+        }
+        sql+=" order by id asc limit ?,? ";
+        Object[] pas={pageNumber,pageSize};
+        List<CateGory> list=baseDao.queryList(sql,pas,CateGory.class);
+        return list;
+    }
+
+    @Override
+    public List<CateGory> getAllCategory() {
+        String sql="select * from " +
+                " category" +
+                " where 1=1 ";
+        Object[] pas={};
+        List<CateGory> list=baseDao.queryList(sql,pas,CateGory.class);
+        return list;
+    }
+
+    @Override
+    public int getAllCategoryCount(String searchId, String searchName) {
+        String  sql="select count(1) len from " +
+                "category " +
+                " where 1=1 ";
+        if (StringUtils.isNotBlank(searchId)) {
+            searchId="%"+searchId+"%";
+            sql+=" and  id like '"+searchId+"'";
+        }
+        if (StringUtils.isNotBlank(searchName)) {
+            searchName="'%"+searchName+"%'";
+            sql+=" and name like "+searchName;
+        }
+        List<Map<String,Object>> list=baseDao.executeQuery(sql,null);
+        if (list != null && list.size()>0) {
+            Map<String,Object> map=list.get(0);
+            Integer len=Integer.parseInt(map.get("len")+"");
+            return len;
+        }
+
+        return 0;
+    }
+
+    @Override
+    public int updateCategory(CateGory cateGory) {
+        String sql = "update category set name = ?,momo = ?,status = ? where id =? ";
+        Object[] params = {cateGory.getName(),cateGory.getMomo(),cateGory.getStatus(),cateGory.getId()};
+        int len = baseDao.executeUpdate(sql,params);
+        return len;
+    }
+
+    @Override
+    public int addCategory(CateGory cateGory) {
+        return 0;
+    }
+
+    @Override
+    public List<Unit> getAllUnit() {
+        String sql = "select * from unit where status = 1";
+        List<Unit> units = baseDao.executeQuery(sql,null);
+        return units;
+    }
+
+
+}

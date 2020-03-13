@@ -1,0 +1,18 @@
+package com.whqfl.dao;
+
+import java.util.List;
+import java.util.Map;
+
+/**
+ * @author 彭于晏
+ * @data 2019/12/27 22:47
+ * @describe
+ */
+public interface StatisticsDao {
+    /**
+     * 对于进一年产品消费进行的统计
+     * @return
+     */
+    List<Map<String,Object>> getNearOneYearUser();
+
+}

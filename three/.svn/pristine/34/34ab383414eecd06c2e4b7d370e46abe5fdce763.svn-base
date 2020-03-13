@@ -1,0 +1,20 @@
+package com.whqfl.service.impl;
+
+import com.whqfl.service.ConsumeService;
+
+/**
+ * @author WCX
+ * @data 2019/12/27 22:32
+ * @describe
+ */
+public class ConsumServiceImpl implements ConsumeService {
+    /**
+     * 新增商品消费
+     *
+     */
+    @Override
+    public int insertConsumerOrder(Integer orderId, Integer cardId, double price, double pay, String momo) {
+
+        return 0;
+    }
+}

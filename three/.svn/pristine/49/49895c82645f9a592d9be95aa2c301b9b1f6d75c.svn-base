@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>会员列表</title>
+    <link type="text/css" rel="stylesheet" href="../common/bootstrap/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="../common/bootstrap/table/bootstrap-table.min.css">
+    <link type="text/css" rel="stylesheet" href="../common/validate/bootstrapValidator.css">
+    <link type="text/css" rel="stylesheet" href="../common/toastr/toastr.min.css">
+    <link rel="stylesheet" href="../common/css/common.css"/>
+</head>
+<body>
+<div class="form-groupd">
+    <label for="searchId" class="label-control">会员ID</label>
+    <input type="text" class="form-control" id="searchId" placeholder="会员ID">
+</div>
+<div class="form-groupd">
+    <label for="searchName" class="label-control">会员名字</label>
+    <input type="text" class="form-control" id="searchName" placeholder="会员名字">
+</div>
+<button type="button" class="btn btn-primary" onclick="rechargeManager.search()">搜索</button>
+<button type="button" class="btn btn-primary" onclick="">新增会员</button>
+<div class="tab-pane">
+    <table class="table table-striped table-hover table-bordered" id="userList">
+        <thead style="background-color: #BEDDFA">
+
+        </thead>
+    </table>
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    修改规则信息
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form id="ruleForm">
+                    <div class="row">
+                        <div class="col-md-4" hidden>
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">编号</span>
+                                <input class="form-control" placeholder="编号" name="ruleId" id="ruleId">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">规则名字</span>
+                                <input class="form-control" placeholder="规则名字" name="ruleName" id="ruleName">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">起充金额</span>
+                                <input class="form-control" placeholder="起充金额" name="ruleAmount" id="ruleAmount">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">充值系数</span>
+                                <input class="form-control" placeholder="充值系数" name="ruleCoff" id="ruleCoff">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">状态</span>
+                                <select class="form-control" id="ruleStatus">
+                                    <option value="1">启用</option>
+                                    <option value="0">禁用</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">创建时间</span>
+                                <input class="form-control" placeholder="创建时间" readonly="readonly" name="ruleCreatedDate" id="ruleCreatedDate">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">结束时间</span>
+                                <input class="form-control" placeholder="结束时间" name="ruleEndDate" id="ruleEndDate">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+                <button type="button" class="btn btn-primary" onclick="rechargeManager.operate();">
+                    确认
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<!-- system confirm modal start -->
+<div id="ycf-alert" class="modal">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span
+                        class="sr-only">Close</span></button>
+                <h5 class="modal-title"><i class="fa fa-exclamation-circle"></i> [Title]</h5>
+            </div>
+            <div class="modal-body">
+                <p>[Message]</p>
+            </div>
+            <div class="modal-footer">
+                <center>
+                    <button type="button" class="btn btn-primary ok" data-dismiss="modal">[BtnOk]</button>
+                    <button type="button" class="btn btn-default cancel" data-dismiss="modal">[BtnCancel]</button>
+                </center>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src=../common/bootstrap/bootstrap.min.js</script></script>
+<script type="text/javascript" src="../common/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../common/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../common/bootstrap/table/bootstrap-table.min.js"></script>
+<script type="text/javascript" src="../common/bootstrap/table/bootstrap-table-zh-CN.min.js"></script>
+<script type="text/javascript" src="../common/validate/bootstrapValidator.min.js"></script>
+<script type="text/javascript" src="../common/toastr/toastr.min.js"></script>
+<script type="text/javascript" src="../common/confirm/bootstrap.confirm.js"></script>
+<script type="text/javascript" src="../common/treeview/bootstrap-treeview.js"></script>
+<script type="text/javascript" src="../common/laydate/laydate.js"></script>
+<script type="text/javascript" src="../user/userAPI.js"></script>
+</html>

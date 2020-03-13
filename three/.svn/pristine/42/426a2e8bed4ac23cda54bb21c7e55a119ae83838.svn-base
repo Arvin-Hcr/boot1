@@ -1,0 +1,42 @@
+package com.whqfl.service.impl;
+
+import com.whqfl.dao.UserDao;
+import com.whqfl.dao.impl.UserDaoImpl;
+import com.whqfl.entity.User;
+import com.whqfl.service.UserService;
+import com.whqfl.util.BusinessException;
+
+import java.util.List;
+
+/**
+ * @authoor 秦林海
+ * @date 2019/12/25
+ */
+public class UserServiceImpl implements UserService {
+    private UserDao userDao=new UserDaoImpl();
+    @Override
+    public List<User> getAllUser(Integer pageSize, Integer pageNumber, String searchId, String searchName) throws BusinessException {
+        if(pageSize==null && pageSize==0){
+            throw new BusinessException("页数不能为空");
+        }
+        if(pageNumber==null){
+            throw new BusinessException("当前页不能为空");
+        }
+
+        return userDao.getAllUser(pageSize,pageNumber,searchId,searchName);
+
+    }
+
+    /**
+     * 按照用户ID，名字查询总条数
+     * @param searchId
+     * @param searchName
+     * @return
+     */
+    @Override
+    public int getAllUsercount(String searchId, String searchName) {
+       return userDao.getAllUsercount(searchId,searchName);
+    }
+
+
+}

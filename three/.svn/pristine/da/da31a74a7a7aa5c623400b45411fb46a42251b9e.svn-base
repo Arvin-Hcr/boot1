@@ -1,0 +1,12 @@
+package com.whqfl.service;
+
+import java.util.List;
+import java.util.Map;
+
+public interface StatisticService {
+    /**
+     * 这个是会员等级统计
+     * @return
+     */
+    Map<String,Object> getNearOneYearUser();
+}

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link type="text/css" rel="stylesheet" href="../../common/bootstrap/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="../../common/bootstrap/table/bootstrap-table.css">
+    <link type="text/css" rel="stylesheet" href="../../common/bootstrap/table/bootstrap-table.min.css">
+    <style type="text/css">
+        #left{
+            float: left;
+            width: 60%;
+
+        }
+        #main3{
+
+            float: left;
+            width: 99%;
+            height: 500px;
+
+        }
+        #right{
+            float:right;
+            width: 40%;
+            height:600px;
+        }
+        td{
+            font-size: 12px;
+            width: 90%;
+        }
+        textarea{
+            max-width: 567px;
+            min-width: 567px;
+            min-height: 350px;
+        }
+        #td1{
+            width: 80%;
+        }
+        #td2{
+            width: 20%;
+        }
+        #right-end{
+            width: 100%;
+            height: 50%;
+        }
+        #left-end{
+            width:63%;
+            float:left;
+
+        }
+        #right-end1{
+            width:100%;
+            border:2px solid gainsboro;
+            float:right;
+            margin-right:10px;
+        }
+        #right-end img{
+            margin-left:80px;
+        }
+    </style>
+</head>
+<body id="body1">
+<div id="left"><div id="main3" ></div></div>
+<div id="right">
+    <table width="90%" cellspacing="0px" height="30%" class="table table-striped table-hover table-bordered">
+        <tr>
+            <td height="50px">
+                <h5 align="center">新闻/活动公告</h5>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" valign="top">
+                <table cellspacing="0" id="tab" style="width: 99%;height: 40%" class="table table-striped table-hover table-bordered">
+
+                </table>
+            </td>
+
+        </tr>
+    </table>
+    <div id="right-end" >
+        <img src="../img/boy1.gif" id="photo"/>
+    </div>
+
+    <div id="right-end1">
+        <div id="main4" style="width:100%;height:400px"></div>
+    </div>
+
+</div>
+<div id="left-end">
+    <div id="main5" style="width:100%;height:400px"></div>
+</div>
+
+
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel1" align="center">
+                    新闻/活动详情
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form id="newsForm">
+                    <div class="row">
+                        <div class="col-md-4" hidden>
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">编号</span>
+                                <input class="form-control" placeholder="编号" name="id" id="id">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">新闻/公告标题</span>
+                                <input class="form-control" placeholder="新闻/公告标题" readonly="readonly" name="newsTitle" id="newsTitle">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group input-group">
+                                <textarea class="form-control" rows="3" placeholder="新闻/公告内容"  readonly="readonly"id="newsContent" name="newsContent"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+</body>
+<script type="text/javascript" src="../../common/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../../common/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../common/bootstrap/table/bootstrap-table.min.js"></script>
+<script type="text/javascript" src="../../common/bootstrap/table/bootstrap-table-zh-CN.min.js"></script>
+<script type="text/javascript" src="../../common/echars/echarts.min.js"></script>
+<script type="text/javascript" src="shouApi.js"></script>
+<!--<script type="text/javascript">-->
+    <!--/**-->
+     <!--*会员增长趋势统计-->
+     <!--*/-->
+    <!--var months;-->
+    <!--var datas;-->
+    <!--$(function () {-->
+        <!--$.ajax({-->
+            <!--url: "/GetNearYearUserServlet",-->
+            <!--type: "post",-->
+            <!--dataType: "json",-->
+            <!--success: function (result) {-->
+                <!--if (result.data != null) {-->
+                    <!--// 基于准备好的dom，初始化echarts实例-->
+                    <!--var myChart = echarts.init(document.getElementById('main3'));-->
+                    <!--// 指定图表的配置项和数据-->
+                    <!--var option = {-->
+                        <!--title: {-->
+                            <!--text: '近一年会员增长趋势图'-->
+                        <!--},-->
+                        <!--xAxis: {-->
+                            <!--type: 'category',-->
+                            <!--data: result.data.m-->
+                        <!--},-->
+                        <!--tooltip: {-->
+                            <!--trigger:'axis'-->
+                        <!--},-->
+                        <!--yAxis: {-->
+                            <!--type: 'value'-->
+                        <!--},-->
+                        <!--series: [{-->
+                            <!--name:'会员增长',-->
+                            <!--stack: '会员注册数',-->
+                            <!--data: result.data.d,-->
+                            <!--type: 'line'-->
+                        <!--}]-->
+                    <!--};-->
+                    <!--// 使用刚指定的配置项和数据显示图表。-->
+                    <!--myChart.setOption(option);-->
+                <!--}-->
+            <!--}-->
+        <!--})-->
+    <!--})-->
+<!--</script>-->
+
+<!--<script type="text/javascript">-->
+
+    <!--/*-->
+    <!--初始化加载-->
+     <!--*/-->
+    <!--$(function () {-->
+        <!--getNewsManner.view();-->
+    <!--})-->
+
+
+    <!--var getNewsManner={};-->
+
+
+    <!--getNewsManner.view=function () {-->
+        <!--$.ajax({-->
+            <!--url:"/GetNewsServlet",-->
+            <!--type: 'post',-->
+            <!--data: {-->
+                <!--"pageNumber":"1",-->
+                <!--"pageSize":"6",-->
+                <!--"searchStatus":1-->
+            <!--},-->
+            <!--dataType: 'json',-->
+            <!--success: function (result) {-->
+                <!--var row=result.data.list;-->
+                <!--for (var i = 0; i <row.length ; i++) {-->
+                    <!--var tr=$("<tr></tr>");-->
+                    <!--var td1=$("<td id='td1' onclick='getNewsManner.content("+JSON.stringify(row[i])+")'>"+"<a href='#'>"+row[i].title+"</a>"+" <img src='news.gif' />"+"</td>");-->
+                    <!--var td2=$("<td id='td2'>"+row[i].createdTime+"</td>")-->
+                    <!--tr.append(td1);-->
+                    <!--tr.append(td2);-->
+                    <!--$("#tab").append(tr);-->
+                <!--}-->
+
+            <!--}-->
+        <!--})-->
+    <!--}-->
+    <!--getNewsManner.content=function (row) {-->
+        <!--$("#id").val(row.id);-->
+        <!--$("#newsTitle").val(row.title);-->
+        <!--$("#newsContent").val(row.content);-->
+        <!--$("#myModal").modal('show');-->
+    <!--}-->
+<!--</script>-->
+</html>

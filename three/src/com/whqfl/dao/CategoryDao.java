@@ -1,0 +1,26 @@
+package com.whqfl.dao;
+
+import com.whqfl.entity.CateGory;
+
+import java.util.List;
+
+public interface CategoryDao {
+
+    /**
+     * 获取所有的类别
+     @autor lxx
+     @date   2019/12/26
+     */
+
+    List<CateGory> getAllCategory();
+
+
+    int updateCategory(CateGory cateGory);
+    int addCategory(CateGory cateGory);
+    int delCategory(Integer Id);
+
+    List<CateGory> getAllCategory(Integer pageNumber, Integer pageSize, String searchId, String searchName);
+
+    int getAllCategoryCount(String searchId, String searchName);
+
+}

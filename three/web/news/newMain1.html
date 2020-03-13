@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>广告</title>
+    <link type="text/css" rel="stylesheet" href="../common/bootstrap/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="../common/bootstrap/table/bootstrap-table.min.css">
+    <link type="text/css" rel="stylesheet" href="../common/validate/bootstrapValidator.css">
+    <link type="text/css" rel="stylesheet" href="../common/toastr/toastr.min.css">
+    <link rel="stylesheet" href="../common/css/common.css"/>
+</head>
+<body>
+<div class="form-groupd">
+    <label for="searchName" class="label-control">公告名称</label>
+    <input type="text" class="form-control" id="searchName" placeholder="公告名称">
+</div>
+<div class="form-groupd">
+    <label for="searchName" class="label-control">时间范围</label>
+    <input type="text" class="form-control" id="searchStartTime" placeholder="开始时间"> -
+    <input type="text" class="form-control" id="searchEndTime" placeholder="结束时间">
+</div>
+
+<button type="button" class="btn btn-primary" onclick="news.search()">搜索</button>
+
+<!-- tableList -->
+<div class="tab-pane">
+    <table class="table table-striped table-hover table-bordered" id="newsList">
+        <thead style="background-color: #BEDDFA">
+
+        </thead>
+    </table>
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    公告信息详情
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form id="ruleForm">
+                    <div class="row">
+                        <div class="col-md-4" hidden>
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">编号</span>
+                                <input class="form-control" placeholder="编号" readonly="readonly" name="ruleId" id="ruleId">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">标题</span>
+                                <input class="form-control" placeholder="标题" readonly="readonly" name="ruleName" id="ruleName">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">内容</span>
+                                <textarea class="form-control" placeholder="内容"readonly="readonly" name="ruleAmount" id="ruleAmount"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">编号</span>
+                                <input class="form-control" placeholder="编号" readonly="readonly" name="ruleCoff" id="ruleCoff">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">创建时间</span>
+                                <input class="form-control" placeholder="创建时间" readonly="readonly" name="ruleCreatedDate" id="ruleCreatedDate">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">结束时间</span>
+                                <input class="form-control"  placeholder="结束时间" readonly="readonly" name="ruleEndDate" id="ruleEndDate">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<!-- system confirm modal start -->
+
+<div id="ycf-alert" class="modal">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span
+                        class="sr-only">Close</span></button>
+                <h5 class="modal-title"><i class="fa fa-exclamation-circle"></i> [Title]</h5>
+            </div>
+            <div class="modal-body">
+                <p>[Message]</p>
+            </div>
+            <div class="modal-footer">
+                <center>
+                    <button type="button" class="btn btn-primary ok" data-dismiss="modal">[BtnOk]</button>
+                    <button type="button" class="btn btn-default cancel" data-dismiss="modal">[BtnCancel]</button>
+                </center>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../common/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../common/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../common/bootstrap/table/bootstrap-table.min.js"></script>
+<script type="text/javascript" src="../common/bootstrap/table/bootstrap-table-zh-CN.min.js"></script>
+<script type="text/javascript" src="../common/validate/bootstrapValidator.min.js"></script>
+<script type="text/javascript" src="../common/toastr/toastr.min.js"></script>
+<script type="text/javascript" src="../common/confirm/bootstrap.confirm.js"></script>
+<script type="text/javascript" src="../common/treeview/bootstrap-treeview.js"></script>
+<script type="text/javascript" src="../common/laydate/laydate.js"></script>
+<script type="text/javascript" src="newMain1.js"></script>
+<!--<script type="text/javascript">
+
+    laydate.render({  ////设置起始和结束时间
+        elem: '#ruleEndDate',  //开始时间选择控件id
+        type: 'date',    //类型
+        done:function () {   //done 回调函数
+            var a = $("#ruleCreatedDate").val();
+            var b = $("#ruleEndDate").val();
+            if (new Date(a) > new Date(b)){
+                toastr['error']("结束时间必须大于等于创建时间");
+                $("#ruleEndDate").val(a);
+            }
+        }
+    })
+</script>-->
+</html>

@@ -1,0 +1,25 @@
+package com.whqfl.service;
+
+import com.whqfl.entity.Rechargerecord;
+import com.whqfl.util.BusinessException;
+
+/**
+ * @authoor 秦林海
+ * @date 2019/12/27
+ */
+public interface RechargerecordService {
+    /**
+     * 充值记录
+     * @param cardid
+     * @param rechargeamount
+     * @param afteramount
+     * @param beforeamount
+     * @param ruleid
+     * @param createdtime
+     * @param staffid
+     * @param momo
+     * @return
+     */
+    int addRechargerecord(Integer cardid,Double rechargeamount,Double afteramount,Double beforeamount,Integer ruleid,String createdtime,
+                             Integer staffid,String momo) throws Exception;
+}
